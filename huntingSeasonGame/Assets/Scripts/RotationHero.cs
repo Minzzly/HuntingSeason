@@ -25,8 +25,8 @@ public class RotationHero : MonoBehaviour
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3 (0,0, angle + rotationOffset));
 
-        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        targetPos.z = 0;
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        // Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        // targetPos.z = 0;
+        // transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
     }
 }
