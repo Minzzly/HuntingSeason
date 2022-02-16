@@ -9,6 +9,8 @@ public class Ennemies : MonoBehaviour
     public Transform target;
     public float lifePoints = 1;
 
+    private float angle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,5 +25,8 @@ public class Ennemies : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        angle = Mathf.Atan2(target.position.x, target.position.y) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 }
