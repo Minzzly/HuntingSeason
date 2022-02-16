@@ -23,10 +23,12 @@ public class RotationHero : MonoBehaviour
         mousePos.y = mousePos.y - objectPos.y;
 
         float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(new Vector3 (0,0, angle + rotationOffset));
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotationOffset));
 
-        // Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        // targetPos.z = 0;
-        // transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
+        if (Input.GetKeyDown(KeyCode.Mouse0))
+        {
+
+        }
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 10f);
     }
 }
