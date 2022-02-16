@@ -30,5 +30,9 @@ public class RotationHero : MonoBehaviour
 
         }
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up), 10f);
+        
+        Vector3 targetPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        targetPos.z = 0;
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
     }
 }
