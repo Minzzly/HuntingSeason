@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 4847960861945614249}
   - component: {fileID: -5273439102108875430}
   - component: {fileID: 4959262315555060828}
-  m_Layer: 0
+  - component: {fileID: 3821341959965703133}
+  m_Layer: 7
   m_Name: loup
-  m_TagString: Untagged
+  m_TagString: Ennemies
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,7 +134,7 @@ MonoBehaviour:
   - {x: -1.4152553, y: 0.41853338, z: 0}
   m_ShapePathHash: -1631203954
   m_Mesh: {fileID: 0}
-  m_InstanceId: 43464
+  m_InstanceId: 27752
 --- !u!58 &-5273439102108875430
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -171,3 +172,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &3821341959965703133
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2430365912546010427}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.022983972, y: 0.1474875}
+  serializedVersion: 2
+  m_Radius: 1.4387614

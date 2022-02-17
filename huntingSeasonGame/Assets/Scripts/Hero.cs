@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Hero : MonoBehaviour
 {
@@ -10,12 +11,19 @@ public class Hero : MonoBehaviour
     private Animator animHero;
     private int score;
     public Text scoreText;
+    public Data scoreEntry;
+
+    private LayerMask mask;
+
+    
     
 
     // Start is called before the first frame update
     void Start()
     {
         animHero = GetComponent<Animator>();
+        mask = LayerMask.GetMask("Enemy");
+
     }
 
     // Update is called once per frame
@@ -33,17 +41,28 @@ public class Hero : MonoBehaviour
 
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             animHero.SetTrigger("shoot");
-            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 50f);
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 50f, mask);
 
             if(hit){
                 GameObject monster = hit.transform.gameObject;
                 monster.GetComponent<Ennemies>().lifePoints --;
+
                 int scoreEnnemies = hit.transform.gameObject.GetComponent<Ennemies>().score;
                 score += scoreEnnemies;
                 scoreText.text = "Score : " + (score);
+                scoreEntry.score = score;
             }
-            
             
         }
     }
+
+
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log(col.gameObject.name);
+        SceneManager.LoadScene("End");
+    }
+
+
+
 }

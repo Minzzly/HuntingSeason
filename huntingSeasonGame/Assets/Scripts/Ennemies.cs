@@ -15,19 +15,13 @@ public class Ennemies : MonoBehaviour
     private float angle;
     private float rotationOffset = 90;
 
-    [SerializeField]
-    GameObject mort;
-
     public int score = 10;
 
-    public void Awake()
-    {
-        mort = GameObject.Find("YouDed");
-    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        mort.SetActive(false);
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
 
@@ -48,17 +42,8 @@ public class Ennemies : MonoBehaviour
         angle = Mathf.Atan2(targetPos.y, targetPos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotationOffset));
 
-        // Debug.Log(thisPos);
-
-        if((thisPos.x >= -0.6 && thisPos.x <= 1) && (thisPos.y <= 0.6 && thisPos.y >= -1)){
-            mort.SetActive(true);
-            Time.timeScale = 0;
-        }
+        
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        Debug.Log("OnCollisionEnter2D");
-    }
 
 }
