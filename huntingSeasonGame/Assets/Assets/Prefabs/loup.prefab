@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 8349542338575931385}
   - component: {fileID: 5723948170628890385}
   - component: {fileID: 4847960861945614249}
+  - component: {fileID: -5273439102108875430}
+  - component: {fileID: 4959262315555060828}
   m_Layer: 0
   m_Name: loup
   m_TagString: Untagged
@@ -98,7 +100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   lifePoints: 1
-  rotationOffset: 90
 --- !u!114 &4847960861945614249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,4 +131,41 @@ MonoBehaviour:
   - {x: -1.4152553, y: 0.41853338, z: 0}
   m_ShapePathHash: -1631203954
   m_Mesh: {fileID: 0}
-  m_InstanceId: -57514
+  m_InstanceId: 42548
+--- !u!58 &-5273439102108875430
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2430365912546010427}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.014288301, y: 0.17124909}
+  serializedVersion: 2
+  m_Radius: 1.3673427
+--- !u!50 &4959262315555060828
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2430365912546010427}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
