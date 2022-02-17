@@ -8,7 +8,7 @@ public class Hero : MonoBehaviour
     public float speed;
     private float rotationOffset = 90;
     private Animator animHero;
-    private int score = 0;
+    private int score;
     public Text scoreText;
     
 
@@ -16,7 +16,6 @@ public class Hero : MonoBehaviour
     void Start()
     {
         animHero = GetComponent<Animator>();
-        Debug.Log(scoreText.text);
     }
 
     // Update is called once per frame
@@ -37,10 +36,9 @@ public class Hero : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 50f);
 
             Destroy(hit.transform.gameObject);
-            score = hit.transform.gameObject.GetComponent<Ennemies>().score;
-           
             int scoreEnnemies = hit.transform.gameObject.GetComponent<Ennemies>().score;
-            scoreText.text = "Score :" + (score + scoreEnnemies);
+            score += scoreEnnemies;
+            scoreText.text = "Score : " + (score);
             
         }
             
