@@ -98,6 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   lifePoints: 1
+  rotationOffset: 90
 --- !u!114 &4847960861945614249
 MonoBehaviour:
   m_ObjectHideFlags: 0

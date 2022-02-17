@@ -5,7 +5,7 @@ using UnityEngine;
 public class RotationHero : MonoBehaviour
 {
     public float speed;
-    public float rotationOffset;
+    private float rotationOffset = 90;
     // Start is called before the first frame update
     void Start()
     {
