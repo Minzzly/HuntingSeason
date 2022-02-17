@@ -5,7 +5,7 @@ using UnityEngine;
 public class Ennemies : MonoBehaviour
 {
 
-    private float speed = 2f;
+    public float speed = 2f;
     public Transform target;
     public float lifePoints = 1;
 
@@ -26,6 +26,7 @@ public class Ennemies : MonoBehaviour
     void Update()
     {
         gameObject.transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+        
         if(lifePoints <= 0)
         {
             Destroy(gameObject);

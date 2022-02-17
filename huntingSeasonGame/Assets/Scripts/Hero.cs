@@ -35,10 +35,14 @@ public class Hero : MonoBehaviour
             animHero.SetTrigger("shoot");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 50f);
 
-            Destroy(hit.transform.gameObject);
-            int scoreEnnemies = hit.transform.gameObject.GetComponent<Ennemies>().score;
-            score += scoreEnnemies;
-            scoreText.text = "Score : " + (score);
+            if(hit){
+                GameObject monster = hit.transform.gameObject;
+                monster.GetComponent<Ennemies>().lifePoints --;
+                int scoreEnnemies = hit.transform.gameObject.GetComponent<Ennemies>().score;
+                score += scoreEnnemies;
+                scoreText.text = "Score : " + (score);
+            }
+            
             
         }
             
