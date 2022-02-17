@@ -10,11 +10,13 @@ public class Hero : MonoBehaviour
     private Animator animHero;
     private int score = 0;
     public Text scoreText;
+    
 
     // Start is called before the first frame update
     void Start()
     {
         animHero = GetComponent<Animator>();
+        Debug.Log(scoreText.text);
     }
 
     // Update is called once per frame
@@ -37,12 +39,12 @@ public class Hero : MonoBehaviour
             Destroy(hit.transform.gameObject);
             score = hit.transform.gameObject.GetComponent<Ennemies>().score;
            
-            scoreText.text = "Score : yeet";
+            int scoreEnnemies = hit.transform.gameObject.GetComponent<Ennemies>().score;
+            scoreText.text = "Score :" + (score + scoreEnnemies);
             
         }
             
-
-            
+    
 
     }
 }
