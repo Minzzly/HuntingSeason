@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Hero : MonoBehaviour
 {
     public float speed;
     private float rotationOffset = 90;
     private Animator animHero;
+    private int score = 0;
+    public Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +33,12 @@ public class Hero : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             animHero.SetTrigger("shoot");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 50f);
+
             Destroy(hit.transform.gameObject);
+            score = hit.transform.gameObject.GetComponent<Ennemies>().score;
+           
+            scoreText.text = "Score : yeet";
+            
         }
             
 

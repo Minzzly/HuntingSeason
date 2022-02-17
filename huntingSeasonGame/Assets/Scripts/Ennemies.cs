@@ -14,6 +14,8 @@ public class Ennemies : MonoBehaviour
     private float angle;
     private float rotationOffset = 90;
 
+    public int score = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class Ennemies : MonoBehaviour
             Destroy(gameObject);
         }
 
-       targetPos = target.position;
+        targetPos = target.position;
         thisPos = transform.position;
         targetPos.x = targetPos.x - thisPos.x;
         targetPos.y = targetPos.y - thisPos.y;
