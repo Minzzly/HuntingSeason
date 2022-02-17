@@ -45,8 +45,5 @@ public class Hero : MonoBehaviour
             
             
         }
-            
-    
-
     }
 }

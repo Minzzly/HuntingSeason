@@ -98,8 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3618e212fd2f524fa3575dd529296a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
   target: {fileID: 0}
   lifePoints: 1
+  score: 10
 --- !u!114 &4847960861945614249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ MonoBehaviour:
   - {x: -1.4152553, y: 0.41853338, z: 0}
   m_ShapePathHash: -1631203954
   m_Mesh: {fileID: 0}
-  m_InstanceId: 42548
+  m_InstanceId: 43464
 --- !u!58 &-5273439102108875430
 CircleCollider2D:
   m_ObjectHideFlags: 0
