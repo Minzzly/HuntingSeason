@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,14 +17,14 @@ public class GameManager : MonoBehaviour
         if(scene == "Start"){
             scoreEntry.score = 0;
         }
+        else if(scene == "End")
+        {
+            GameObject finalScore = GameObject.Find("finalScore");
+            finalScore.GetComponent<Text>().text = "Score : " + scoreEntry.score + " points";
+        }
     }
 
     public void LoadLevel(){
         SceneManager.LoadScene("Scene1");
     }
-
-    public void RestartGame(){
-        SceneManager.LoadScene("Start");
-    }
-
 }

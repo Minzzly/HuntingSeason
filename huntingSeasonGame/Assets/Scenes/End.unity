@@ -237,7 +237,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1079, y: 607}
+  m_SizeDelta: {x: 1127, y: 634}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262832420
 MonoBehaviour:
@@ -306,7 +306,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1168e6749bc674489cda19f9e8fcd89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
   scoreEntry: {fileID: 11400000, guid: 877f54efa35bfbf4e9daa11510612cb5, type: 2}
 --- !u!4 &758957385
 Transform:
@@ -417,7 +416,7 @@ GameObject:
   - component: {fileID: 940852737}
   - component: {fileID: 940852736}
   m_Layer: 5
-  m_Name: Text
+  m_Name: finalScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -532,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -737,7 +736,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 758957384}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: RestartGame
+        m_MethodName: LoadLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

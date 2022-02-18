@@ -45,7 +45,7 @@ public class Hero : MonoBehaviour
 
             if(hit){
                 GameObject monster = hit.transform.gameObject;
-                monster.GetComponent<Ennemies>().lifePoints --;
+                monster.GetComponent<Ennemies>().TakeDamage();
 
                 int scoreEnnemies = hit.transform.gameObject.GetComponent<Ennemies>().score;
                 score += scoreEnnemies;

@@ -8,7 +8,8 @@ public class Ennemies : MonoBehaviour
 
     public float speed = 2f;
     public Transform target;
-    public float lifePoints = 1;
+    public float lifePoints;
+    private float maxLifePoints;
 
     private Vector3 targetPos;
     private Vector3 thisPos;
@@ -17,12 +18,16 @@ public class Ennemies : MonoBehaviour
 
     public int score = 10;
 
+    public Heatlbar heatlbar;
+
 
 
     // Start is called before the first frame update
     void Start()
     {
+        maxLifePoints = lifePoints;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        heatlbar.SetHealth(lifePoints, maxLifePoints);
     }
 
     // Update is called once per frame
@@ -43,6 +48,11 @@ public class Ennemies : MonoBehaviour
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle + rotationOffset));
 
         
+    }
+
+    public void TakeDamage(){
+        lifePoints --;
+        heatlbar.SetHealth(lifePoints, maxLifePoints);
     }
 
 

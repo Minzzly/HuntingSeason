@@ -438,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smallEnnemies: {fileID: 2430365912546010427, guid: 2142c5de94ee4dc47b122df109bb5ab5, type: 3}
   bigEnnemies: {fileID: 3307051587640223881, guid: 3dff07225e37d154a9d8faa40b276806, type: 3}
+  boss: {fileID: 5543499095309502306, guid: 36462cba6954a044e97d6e13a01675e7, type: 3}
 --- !u!4 &681826112
 Transform:
   m_ObjectHideFlags: 0
@@ -464,7 +465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1168e6749bc674489cda19f9e8fcd89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 
   scoreEntry: {fileID: 11400000, guid: 877f54efa35bfbf4e9daa11510612cb5, type: 2}
 --- !u!1 &1236420042
 GameObject:
