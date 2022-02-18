@@ -23,7 +23,7 @@ public class Hero : MonoBehaviour
     {
         animHero = GetComponent<Animator>();
         mask = LayerMask.GetMask("Enemy");
-
+        scoreEntry.score = 0;
     }
 
     // Update is called once per frame
@@ -49,7 +49,7 @@ public class Hero : MonoBehaviour
 
                 int scoreEnnemies = hit.transform.gameObject.GetComponent<Ennemies>().score;
                 score += scoreEnnemies;
-                scoreText.text = "Score : " + (score);
+                scoreText.text = "Score : " + score;
                 scoreEntry.score = score;
             }
             
@@ -59,7 +59,6 @@ public class Hero : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        Debug.Log(col.gameObject.name);
         SceneManager.LoadScene("End");
     }
 

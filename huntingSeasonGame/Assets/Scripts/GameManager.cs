@@ -6,12 +6,24 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
 
-    public string scene; 
-
+    private string scene; 
+    public Data scoreEntry;
 
     void Start()
     {
         scene = SceneManager.GetActiveScene().name;
+
+        if(scene == "Start"){
+            scoreEntry.score = 0;
+        }
+    }
+
+    public void LoadLevel(){
+        SceneManager.LoadScene("Scene1");
+    }
+
+    public void RestartGame(){
+        SceneManager.LoadScene("Start");
     }
 
 }
