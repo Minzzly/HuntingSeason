@@ -11,8 +11,10 @@ public class Heatlbar : MonoBehaviour
     public Slider slider;
     public Color lowLife;
     public Color highLife;
+
     public Vector3 offset;
 
+  
 
     public void SetHealth(float health, float maxHealth){
         slider.gameObject.SetActive(health < maxHealth);
