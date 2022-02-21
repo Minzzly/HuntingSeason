@@ -16,6 +16,8 @@ public class Hero : MonoBehaviour
     private LayerMask mask;
 
     
+
+    
     
 
     // Start is called before the first frame update
@@ -51,6 +53,8 @@ public class Hero : MonoBehaviour
                 score += scoreEnnemies;
                 scoreText.text = "Score : " + score;
                 scoreEntry.score = score;
+
+                
             }
             
         }

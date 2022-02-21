@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     private string scene; 
     public Data scoreEntry;
 
+    [SerializeField]private int squelettonValue = 0;
+    private GameObject squeletton;
+
     void Start()
     {
         scene = SceneManager.GetActiveScene().name;
@@ -17,10 +20,23 @@ public class GameManager : MonoBehaviour
         if(scene == "Start"){
             scoreEntry.score = 0;
         }
-        else if(scene == "End")
+        else if(scene == "End" || scene == "Win")
         {
             GameObject finalScore = GameObject.Find("finalScore");
             finalScore.GetComponent<Text>().text = "Score : " + scoreEntry.score + " points";
+        }
+
+
+    }
+
+
+    public void AddSqueleton(){
+        squelettonValue ++;
+        squeletton = GameObject.Find("squeletton" + squelettonValue.ToString());
+        squeletton.GetComponent<Image>().enabled = true;
+
+        if(squelettonValue == 8){
+            WinGame();
         }
     }
 
@@ -30,5 +46,9 @@ public class GameManager : MonoBehaviour
 
     public void QuitGame(){
         Application.Quit();
+    }
+
+    private void WinGame(){
+        SceneManager.LoadScene("Win");
     }
 }

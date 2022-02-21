@@ -20,6 +20,9 @@ public class Ennemies : MonoBehaviour
 
     public Heatlbar heatlbar;
 
+    private string enemyName;
+    private GameObject gameManager;
+
 
 
     // Start is called before the first frame update
@@ -28,6 +31,8 @@ public class Ennemies : MonoBehaviour
         maxLifePoints = lifePoints;
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         heatlbar.SetHealth(lifePoints, maxLifePoints);
+        enemyName = transform.name;
+        gameManager = GameObject.Find("GameManager");
     }
 
     // Update is called once per frame
@@ -35,8 +40,11 @@ public class Ennemies : MonoBehaviour
     {
         gameObject.transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         
-        if(lifePoints <= 0)
+        if(lifePoints <= 0 && enemyName == "loup_master(Clone)")
         {
+            Destroy(gameObject);
+            gameManager.GetComponent<GameManager>().AddSqueleton();
+        }else if(lifePoints <= 0 && enemyName != "loup_master(Clone)"){
             Destroy(gameObject);
         }
 
