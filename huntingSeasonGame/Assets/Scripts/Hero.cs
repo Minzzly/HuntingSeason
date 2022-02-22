@@ -15,7 +15,10 @@ public class Hero : MonoBehaviour
 
     private LayerMask mask;
 
-    
+    [SerializeField] 
+    AudioClip audioShoot;
+    [SerializeField] 
+    AudioSource audioSrc;
 
     
     
@@ -44,6 +47,7 @@ public class Hero : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Mouse0)){
             animHero.SetTrigger("shoot");
             RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.down), 50f, mask);
+            audioSrc.PlayOneShot(audioShoot);
 
             if(hit){
                 GameObject monster = hit.transform.gameObject;
